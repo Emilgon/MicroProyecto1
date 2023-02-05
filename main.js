@@ -37,6 +37,38 @@ carruselSlide.addEventListener('transitionend',()=>{
     }
 });
 
+let boton=document.getElementById("verificar")
+let resultado=document.querySelector(".verificar")
+
+boton.addEventListener("click",(e)=>{
+    e.preventDefault();
+    const email=document.getElementById("correo").value;
+    validarCorreo(email);
+})
+
+const validarCorreo=(correo)=>{
+    let expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    let verificar=expReg.test(correo);
+    if(verificar){
+        alert("Información enviada")
+    }else{
+        alert("El correo NO es válido")
+    }
+}
+
+ScrollReveal().reveal('.carrusel',{delay:500});
+ScrollReveal().reveal('.experience',{delay:500});
+ScrollReveal().reveal('.about-me',{delay:500});
+ScrollReveal().reveal('.skills',{delay:500});
+ScrollReveal().reveal('.social',{delay:500});
+
+document.querySelector('.menu-btn').addEventListener('click', ()=>{
+    document.querySelector('.nav-menu').classList.toggle('show');
+});
+
+
+
+
 
 
 
